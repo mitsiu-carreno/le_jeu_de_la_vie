@@ -1,0 +1,7 @@
+*.o
+bin/*
+!bin/.gitkeep
+.DS_Store
+vs_sln/*
+.vs/*
+*.swp

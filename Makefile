@@ -14,7 +14,7 @@ BUILD_TARGET := build
 EXEC_TARGET	:= bin
 
 # Executable 
-EXEC_TARGET_NAME := banner
+EXEC_TARGET_NAME := le_jeu_de_la_vie
 EXEC_FULL_PATH := $(EXEC_TARGET)/$(EXEC_TARGET_NAME)
 
 # Code properties
