@@ -1,7 +1,7 @@
 #include "cellState.hpp"
+#include "windowLength.hpp"
 #include <iostream>
 #include <array>
-
 /*
 -Estado: vivo/muerto - *bool
 -Posición: (3,5) - *vector *array
@@ -44,5 +44,6 @@ int main(){
   */
 
 	std::cout << "Oh la la\n";
+	GetWindowLength();
 	return 0;
 }
