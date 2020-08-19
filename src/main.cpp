@@ -25,6 +25,24 @@ void PrintStatus(bool cell_status){
 }
 
 int main(){
+  int side_grid = 5;
+  int size_grid = side_grid * side_grid;
+
+  std::vector<std::vector<Cell>> cell_grid (side_grid);
+  for(size_t i{0}; i<side_grid; ++i){
+    cell_grid[i].resize(side_grid);
+    
+    for(size_t j{0}; j<side_grid; ++j){
+      cell.status = true;
+      cell.coor = [i],[j];
+    }
+  }
+  //std::vector<Cell> cell_grid (size_grid);
+  // b
+  
+  // a
+
+
   Cell celula;
   celula.status = true;
   celula.coor[0] = 6;
@@ -44,6 +62,6 @@ int main(){
   */
 
 	std::cout << "Oh la la\n";
-	GetWindowLength();
+  utils::GetWindowLength();
 	return 0;
 }

@@ -1,6 +1,8 @@
 #ifndef WINDOW_LENGHT_H
 #define WINDOW_LENGHT_H
 
-int GetWindowLength();
+namespace utils{
+  int GetWindowLength();
+}
 
 #endif

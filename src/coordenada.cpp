@@ -1,7 +1,7 @@
 #include <iostream>
 #include<string>
 
-int main (){
+int TestGrid (){
 
     struct Coordenada{
     int celula;
@@ -15,7 +15,7 @@ int main (){
     int tamaño {10};
     int ejex {0};
     int ejey {0};
-    char celula {'#'};
+    //char celula {'#'};
     char espacio {' '};
     std::cout<< "Ingrese las coordenadas de la celula que quiere activar/n X: ";
     std::cin >> x;
@@ -38,7 +38,7 @@ int main (){
                 for (ejex=0; ejex<=x; ++ejex){
                     std::cout<< espacio;
                     if (ejex<x)
-                        {4
+                        {
                         std::cout<<" ";
                         }
                     else if (ejex==x)
