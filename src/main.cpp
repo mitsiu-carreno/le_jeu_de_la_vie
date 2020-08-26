@@ -61,6 +61,6 @@ int main(){
   */
 
 	std::cout << "Oh la la\n";
-  utils::GetWindowLength();
+  std::cout << "window length: " << utils::GetWindowLength() << "\n";
 	return 0;
 }
