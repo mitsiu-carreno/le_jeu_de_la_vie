@@ -3,5 +3,5 @@ bin/*
 !bin/.gitkeep
 .DS_Store
 vs_sln/*
-.vscode/*
+*.vscode/*
 *.swp

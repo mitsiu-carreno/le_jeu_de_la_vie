@@ -3,6 +3,7 @@
 #include <iostream>
 #include <array>
 #include <vector>
+
 /*
 -Estado: vivo/muerto - *bool
 -Posición: (3,5) - *vector *array
@@ -25,19 +26,35 @@ void PrintStatus(bool cell_status){
   }
 }
 
+
+void CheckCellStatus(std::vector<std::vector<Cell>> grid){ 
+//
+//	for(std::vector v_ext : grid){
+//
+//		for(std::vector v_int : grid){
+//		
+//			std::cout << ;
+//
+//		}
+//	}
+}
+
+
 int main(){
+
   int side_grid = 5;
   //int size_grid = side_grid * side_grid;
 
   std::vector<std::vector<Cell>> cell_grid (side_grid);
+  
   int contador_id = 1;
-  for(int i{0}; i<side_grid; ++i){
+  
+  for(int i{0}; i < side_grid; ++i){
     cell_grid[i].resize(side_grid);
 
-    for(int j{0}; j<side_grid; ++j){
+    for(int j{0}; j < side_grid; ++j){
       Cell cell;
       cell.status = true;
-      //cell.coor = [i],[j];
       cell.coor[0] = i;
       cell.coor[1] = j;
       cell.id = contador_id;
@@ -61,5 +78,8 @@ int main(){
 
 	std::cout << "Oh la la\n";
   std::cout << "window length: " << utils::GetWindowLength() << "\n";
+
+CheckCellStatus(cell_grid);
+
 	return 0;
 }
