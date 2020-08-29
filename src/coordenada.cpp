@@ -12,7 +12,7 @@ int TestGrid (){
 
     int x=0;
     int y=0;
-    int tamaño {10};
+    int tamano {10};
     int ejex {0};
     int ejey {0};
     //char celula {'#'};
@@ -22,13 +22,13 @@ int TestGrid (){
     std::cout<< "Y:";
     std::cin >> y;
     
-    for (ejex=0; ejex<=tamaño; ++ejex){
-        if (ejex<tamaño){
+    for (ejex=0; ejex<=tamano; ++ejex){
+        if (ejex<tamano){
             std::cout<< "x"<<ejex<<" ";
             } 
         }
 
-    for (ejey=0; ejey<=tamaño;++ejey){
+    for (ejey=0; ejey<=tamano;++ejey){
             if (ejey<y){
             std::cout<<"y"<<ejey<<"\n";
             }

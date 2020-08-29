@@ -32,10 +32,10 @@ int main(){
 
   std::vector<std::vector<Cell>> cell_grid (side_grid);
   int contador_id = 1;
-  for(size_t i{0}; i<side_grid; ++i){
+  for(int i{0}; i<side_grid; ++i){
     cell_grid[i].resize(side_grid);
 
-    for(size_t j{0}; j<side_grid; ++j){
+    for(int j{0}; j<side_grid; ++j){
       Cell cell;
       cell.status = true;
       //cell.coor = [i],[j];
