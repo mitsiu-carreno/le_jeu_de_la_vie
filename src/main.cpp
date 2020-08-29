@@ -1,33 +1,18 @@
-#include "cellState.hpp"
+#include "cell.hpp"
 #include "windowLength.hpp"
 #include <iostream>
-#include <array>
 #include <vector>
-
-/*
--Estado: vivo/muerto - *bool
--Posición: (3,5) - *vector *array
-*/
-
-
-struct Cell{
-  bool status;
-  std::array<int,2> coor;
-  int id;
-  //int coor_x;
-  //int coor_y;
-};
 
 void PrintStatus(bool cell_status){
   if(cell_status == 1){
-    std::cout << cell_states[CellStateCatalog::alive] << "\n";
+    std::cout << cell::states[cell::StateCatalog::alive] << "\n";
   }else{
-    std::cout << cell_states[CellStateCatalog::dead] << "\n";
+    std::cout << cell::states[cell::StateCatalog::dead] << "\n";
   }
 }
 
 
-void CheckCellStatus(std::vector<std::vector<Cell>> grid){ 
+void CheckCellStatus(std::vector<std::vector<cell::Cell>> grid){ 
 //
 //	for(std::vector v_ext : grid){
 //
@@ -45,7 +30,7 @@ int main(){
   int side_grid = 5;
   //int size_grid = side_grid * side_grid;
 
-  std::vector<std::vector<Cell>> cell_grid (side_grid);
+  std::vector<std::vector<cell::Cell>> cell_grid (side_grid);
   
   int contador_id = 1;
   
@@ -53,7 +38,7 @@ int main(){
     cell_grid[i].resize(side_grid);
 
     for(int j{0}; j < side_grid; ++j){
-      Cell cell;
+      cell::Cell cell;
       cell.status = true;
       cell.coor[0] = i;
       cell.coor[1] = j;
@@ -62,7 +47,7 @@ int main(){
       ++contador_id;
     }
   }
-  //std::vector<Cell> cell_grid (size_grid);
+  //std::vector<cell::Cell> cell_grid (size_grid);
 
   
   for(size_t i{0}; i<cell_grid.size(); ++i){
@@ -71,12 +56,8 @@ int main(){
       PrintStatus(cell_grid[i][j].status);
     }
   }
-  /*
-  CellState cell;
-  std::cout << cell.alive << cell.dead << cell.alive << "\n";
-  */
 
-	std::cout << "Oh la la\n";
+
   std::cout << "window length: " << utils::GetWindowLength() << "\n";
 
 CheckCellStatus(cell_grid);
