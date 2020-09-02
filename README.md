@@ -35,7 +35,7 @@ $ make hardclean
 ### Setup
 Clone repo (only once)
 ```bash
-$ git clone https://github.com/mitsiu-carreno/cpp_banner.git
+$ git clone https://github.com/mitsiu-carreno/le_leu_de_la_vie.git
 ```
 
 Change branch (working branch is "develop")
@@ -87,11 +87,11 @@ $ git push origin develop
   1. Tareas iniciales -> Continuar sin código
   2. Ver -> Team explorer
   3. Repositorios GIT locales -> Clonar
-  4. https://github.com/mitsiu-carreno/cpp_banner.git (Checar ubicación local && Check Submódulos de clonación recursiva)
+  4. https://github.com/mitsiu-carreno/le_leu_de_la_vie.git (Checar ubicación local && Check Submódulos de clonación recursiva)
   5. Ver -> Team explorer
-  6. Repositorios GIT locales -> cpp_banner
+  6. Repositorios GIT locales -> le_leu_de_la_vie
   7. Proyecto -> Ramas -> remotes/origin -> develop
-  8. Team explorer -> Repositorios GIT locales -> cpp_banner -> Soluciones -> Nueva
+  8. Team explorer -> Repositorios GIT locales -> le_leu_de_la_vie -> Soluciones -> Nueva
   9. Proyecto vacío (Consola, C++, Windows)
   10. Nombre de proyecto: vs_sln
   11. Ubicación: (misma de repo)
@@ -108,7 +108,7 @@ $ git push origin develop
   2. Archivos de origen -> Agregar -> Elemento existente
 
 * Add new files to workplace
-  1. Ver -> Explorador de soluciones -> Alternar vistas -> cpp_banner
+  1. Ver -> Explorador de soluciones -> Alternar vistas -> le_leu_de_la_vie
   2. Seleccionar carpeta (src/ include/) -> Agregar -> Nuevo archivo
   3. Ver -> Explorador de soluciones -> Alternar vistas -> vs_sln.sln
   4. Archivos de origen -> Agregar -> Elemento existente
@@ -122,5 +122,3 @@ $ git push origin develop
   2. Rama: develop -> Enter a message (descripción de commit) -> Confirmar todo
   3. Ver -> Team explorer -> Sincronización -> Confirmaciones de salida -> Insertar
 
-## Art
-@ildanilo
