@@ -4,8 +4,10 @@ PLAT_NAME := $(shell uname -s)
 #Compiler
 ifeq ($(PLAT_NAME), Darwin)
 	CC=clang++ -arch x86_64
+	LIBS=-lcurses 
 else
 	CC=g++
+	LIBS=-lcurses -lterminfo
 endif
 
 # Project structure
@@ -42,7 +44,7 @@ CFLAGS=-c -std=c++1z -Wall -Werror -g
 $(EXEC_TARGET): $(O_FILE_FULL_PATH_LIST)
 	@mkdir -p $(EXEC_TARGET)
 	@echo "Linking..."
-	@echo "		$(CC) $^ -o $(EXEC_FULL_PATH)"; $(CC) $^ -o $(EXEC_FULL_PATH);
+	@echo "		$(CC) $^ $(LIBS) -o $(EXEC_FULL_PATH)"; $(CC) $^ $(LIBS) -o $(EXEC_FULL_PATH);
 	@echo "Build complete, executing..."
 	@echo ""
 	./$(EXEC_FULL_PATH)
