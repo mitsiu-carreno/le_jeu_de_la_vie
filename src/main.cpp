@@ -3,7 +3,7 @@
 #include "clearScreen.hpp"
 #include <iostream>
 #include <vector>
-#include "initialState.hpp"
+//#include "initialState.hpp"
 
 void PrintStatus(bool cell_status){
   if(cell_status == 1){
