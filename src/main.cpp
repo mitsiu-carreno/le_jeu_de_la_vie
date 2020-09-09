@@ -2,9 +2,9 @@
 #include "windowLength.hpp"
 #include "clearScreen.hpp"
 #include "sleepThread.hpp"
+#include "initialState.hpp"
 #include <iostream>
 #include <vector>
-//#include "initialState.hpp"
 
 void PrintStatus(bool cell_status){
   if(cell_status == 1){
@@ -67,6 +67,16 @@ int main(){
   //utils::ClearScreen();
 
 CheckCellStatus(cell_grid);
+
+DefineInitialStatus(cell_grid.size(), cell_grid);
+
+for(size_t i{0}; i<cell_grid.size(); ++i){
+    for(size_t j{0}; j<cell_grid[i].size(); ++j){
+      std::cout << cell_grid[i][j].status << " id: " << cell_grid[i][j].id << " - " << cell_grid[i][j].coor[0] << "," << cell_grid[i][j].coor[1] << "\n";
+      PrintStatus(cell_grid[i][j].status);
+    }
+    std::cout << "\n";
+  }
 
 	return 0;
 }
