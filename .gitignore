@@ -6,4 +6,5 @@ vs_sln/*
 *.vscode/*
 *.swp
 .vs/*
-/le_jue_de_la_vie/.vs/le_jue_de_la_vie/v16
+le_jue_de_la_vie/*
+.vscode/*

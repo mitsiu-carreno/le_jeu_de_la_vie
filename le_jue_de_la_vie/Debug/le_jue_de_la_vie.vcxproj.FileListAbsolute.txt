@@ -1,2 +1,0 @@
-C:\Users\edgar\Source\Repos\le_jeu_de_la_vie\le_jue_de_la_vie\Debug\le_jue_de_la_vie.exe
-C:\Users\edgar\Source\Repos\le_jeu_de_la_vie\le_jue_de_la_vie\Debug\le_jue_de_la_vie.pdb

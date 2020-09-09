@@ -1,6 +1,7 @@
 #include "cell.hpp"
 #include "windowLength.hpp"
 #include "clearScreen.hpp"
+#include "sleepThread.hpp"
 #include <iostream>
 #include <vector>
 //#include "initialState.hpp"
@@ -61,9 +62,9 @@ int main(){
   }
 
 
-  std::cout << "window length: " << utils::GetWindowLength() << "\n";
-  
-  utils::ClearScreen();
+  std::cout << "window length: " << utils::GetWindowLength() << "\n"; 
+  utils::Sleep(2000);
+  //utils::ClearScreen();
 
 CheckCellStatus(cell_grid);
 
