@@ -63,7 +63,7 @@ int main(){
 
 
   std::cout << "window length: " << utils::GetWindowLength() << "\n"; 
-  utils::Sleep(2000);
+  //utils::Sleep(2000);
   //utils::ClearScreen();
 
 CheckCellStatus(cell_grid);
