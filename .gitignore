@@ -3,7 +3,7 @@ bin/*
 !bin/.gitkeep
 .DS_Store
 vs_sln/*
-.vscode/*
+*.vscode/*
 *.swp
 .vs/*
 /le_jue_de_la_vie/.vs/le_jue_de_la_vie/v16
