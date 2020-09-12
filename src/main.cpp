@@ -1,11 +1,8 @@
 #include "cell.hpp"
 #include "windowLength.hpp"
 #include "clearScreen.hpp"
-#include "initialState.hpp"
 #include <iostream>
 #include <vector>
-
-
 //#include "initialState.hpp"
 
 void PrintStatus(bool cell_status){
@@ -57,28 +54,54 @@ int main(){
   
   for(size_t i{0}; i<cell_grid.size(); ++i){
     for(size_t j{0}; j<cell_grid[i].size(); ++j){
-      std::cout << cell_grid[i][j].status << " id: " << cell_grid[i][j].id << " - " << cell_grid[i][j].coor[0] << "," << cell_grid[i][j].coor[1] << "\n";
+      std::cout << cell_grid[i][j].status << " id: " << cell_grid[i][j].id << " - " << cell_grid[i][j].coor[0] << "," << cell_grid[i][j].coor[1];
       //PrintStatus(cell_grid[i][j].status);
     }
     std::cout << "\n";
   }
 
+  for (size_t i{ 0 }; i < cell_grid.size(); ++i) {
+      for (size_t j{ 0 }; j < cell_grid.size(); ++j) {
+          std::cout << cell_grid[i][j].id ;
+          int temp{ static_cast<int>(cell_grid.size())};
+
+          if (cell_grid [i][j].id == 1) {
+              std::cout << "A ";
+          }
+          if (cell_grid [i][j].id > 1 && cell_grid [i][j].id < temp) {
+              std::cout << "B ";
+          }
+          if (cell_grid [i][j].id == temp) {
+              std::cout << "C ";
+          }
+          if (cell_grid [i][j].id == temp * temp - (temp - 1)) {
+              std::cout << "D ";
+          }
+          if (cell_grid [i][j].id > temp* temp - (temp - 1) && cell_grid [i][j].id < temp * temp) {
+              std::cout << "E ";
+          }
+          if (cell_grid [i][j].id == temp * temp) {
+              std::cout << "F ";
+          }
+          if (i > 0 && i < cell_grid.size()-1 && j == 0) {
+              std::cout << "G ";
+          }
+          if (i > 0 && i < cell_grid.size() - 1 && j == 4) {
+              std::cout << "H ";
+          }
+          else {
+              std::cout << "I ";
+          }
+      }
+      std::cout << "\n";
+  }
+
 
   std::cout << "window length: " << utils::GetWindowLength() << "\n";
   
-  utils::ClearScreen();
+ // utils::ClearScreen();
 
 CheckCellStatus(cell_grid);
-
-DefineInitialStatus(cell_grid.size(), cell_grid);
-
-for(size_t i{0}; i<cell_grid.size(); ++i){
-    for(size_t j{0}; j<cell_grid[i].size(); ++j){
-      std::cout << cell_grid[i][j].status << " id: " << cell_grid[i][j].id << " - " << cell_grid[i][j].coor[0] << "," << cell_grid[i][j].coor[1] << "\n";
-      PrintStatus(cell_grid[i][j].status);
-    }
-    std::cout << "\n";
-  }
 
 	return 0;
 }

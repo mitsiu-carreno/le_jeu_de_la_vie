@@ -1,3 +1,3 @@
 ﻿  main.cpp
-C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cellState.hpp(5,19): warning C4566: el carácter representado por el nombre de carácter universal '\u2589' no se puede representar en la página de códigos actual (1252)
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(22,45): warning C4566: el carácter representado por el nombre de carácter universal '\u2589' no se puede representar en la página de códigos actual (1252)
   le_jue_de_la_vie.vcxproj -> C:\Users\edgar\source\repos\le_jeu_de_la_vie\le_jue_de_la_vie\Debug\le_jue_de_la_vie.exe
