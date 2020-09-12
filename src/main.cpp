@@ -60,30 +60,39 @@ int main(){
           int temp{ static_cast<int>(cell_grid.size())};
 
           if (cell_grid [i][j].id == 1) {
+              // arriba-izq
               std::cout << "A ";
           }
           if (cell_grid [i][j].id > 1 && cell_grid [i][j].id < temp) {
+              // arriba
               std::cout << "B ";
           }
           if (cell_grid [i][j].id == temp) {
+              // arriba-der
               std::cout << "C ";
           }
           if (cell_grid [i][j].id == temp * temp - (temp - 1)) {
+              // abajo-izq
               std::cout << "D ";
           }
           if (cell_grid [i][j].id > temp* temp - (temp - 1) && cell_grid [i][j].id < temp * temp) {
+              // abajo
               std::cout << "E ";
           }
           if (cell_grid [i][j].id == temp * temp) {
+              // abajo-der
               std::cout << "F ";
           }
           if (i > 0 && i < cell_grid.size()-1 && j == 0) {
+              // izq
               std::cout << "G ";
           }
           if (i > 0 && i < cell_grid.size() - 1 && j == 4) {
+              // der
               std::cout << "H ";
           }
           else {
+              // central
               std::cout << "I ";
           }
       }
