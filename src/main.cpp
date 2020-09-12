@@ -64,7 +64,7 @@ int main(){
   }
 
 
-  std::cout << "window length: " << utils::GetWindowLength() << "\n";
+  //std::cout << "window length: " << utils::GetWindowLength() << "\n";
   
   utils::ClearScreen();
 

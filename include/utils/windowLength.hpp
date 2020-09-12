@@ -1,8 +1,8 @@
 #ifndef WINDOW_LENGHT_H
 #define WINDOW_LENGHT_H
-
+#include array 
 namespace utils{
-  int GetWindowLength();
+  std::array <int,2> GetWindowLength();
 }
 
 #endif
