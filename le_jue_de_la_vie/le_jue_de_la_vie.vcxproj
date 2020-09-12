@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\edgar\source\repos\le_jeu_de_la_vie\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\utils;C:\Users\edgar\source\repos\le_jeu_de_la_vie\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -142,7 +142,17 @@
   <ItemGroup>
     <ClCompile Include="..\src\coordenada.cpp" />
     <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\src\windowLength.cpp" />
+    <ClCompile Include="..\src\utils\clearScreen.cpp" />
+    <ClCompile Include="..\src\utils\windowLength.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.gitignore" />
+    <None Include="..\Makefile" />
+    <None Include="..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\cell.hpp" />
+    <ClInclude Include="..\include\initialState.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

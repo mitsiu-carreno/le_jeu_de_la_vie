@@ -7,7 +7,7 @@ ifeq ($(PLAT_NAME), Darwin)
 	LIBS=-lcurses 
 else
 	CC=g++
-	LIBS=-lcurses -lterminfo
+	LIBS=-lcurses 
 endif
 
 # Project structure
