@@ -1,4 +1,5 @@
 #include "cell.hpp"
+#include "grid.hpp"
 #include "windowLength.hpp"
 #include "clearScreen.hpp"
 #include "sleepThread.hpp"
@@ -59,6 +60,8 @@ int main(){
   //utils::ClearScreen();
 
 CheckCellStatus(cell_grid);
+
+PrintGrid(cell_grid);
 
 DefineInitialStatus(cell_grid.size(), cell_grid);
 
