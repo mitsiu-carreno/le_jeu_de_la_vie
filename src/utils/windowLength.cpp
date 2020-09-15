@@ -1,4 +1,4 @@
-#include array
+#include <array>
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) 
   #include <windows.h>
 
@@ -20,7 +20,7 @@
   #include <unistd.h>
   
   namespace utils{
-    int GetWindowLength(){
+    std::array<int,2> GetWindowLength(){
         
       struct winsize size;
       ioctl(STDOUT_FILENO, TIOCGWINSZ, &size);
