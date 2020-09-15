@@ -1,15 +1,16 @@
+#include <array>
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) 
   #include <windows.h>
 
-  namespace utils{
-    int GetWindowLength(){
+
+   namespace utils{
+    std::array <int, 2> GetWindowLength(){
       CONSOLE_SCREEN_BUFFER_INFO csbi;
       int columns, rows;
-
       GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
       columns = csbi.srWindow.Right - csbi.srWindow.Left + 1;
       rows = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
-      return columns;
+      return {columns,rows};
     }
   }
 
@@ -19,13 +20,13 @@
   #include <unistd.h>
   
   namespace utils{
-    int GetWindowLength(){
+    std::array<int,2> GetWindowLength(){
         
       struct winsize size;
       ioctl(STDOUT_FILENO, TIOCGWINSZ, &size);
       //std::cout << size.ws_col << "\n";
       //std::cout << size.ws_row << "\n";
-      return size.ws_col;
+      return {size.ws_col,size.ws_row};
     }
   }      
 #else

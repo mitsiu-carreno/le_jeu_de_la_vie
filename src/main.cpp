@@ -1,4 +1,5 @@
 #include "cell.hpp"
+#include "grid.hpp"
 #include "windowLength.hpp"
 #include "clearScreen.hpp"
 #include "sleepThread.hpp"
@@ -60,30 +61,39 @@ int main(){
 
           if (cell_grid [i][j].id == 1) {
               cell_grid[i][j].status;
+              // arriba-izq
               std::cout << "A ";
           }
           if (cell_grid [i][j].id > 1 && cell_grid [i][j].id < temp) {
+              // arriba
               std::cout << "B ";
           }
           if (cell_grid [i][j].id == temp) {
+              // arriba-der
               std::cout << "C ";
           }
           if (cell_grid [i][j].id == temp * temp - (temp - 1)) {
+              // abajo-izq
               std::cout << "D ";
           }
           if (cell_grid [i][j].id > temp* temp - (temp - 1) && cell_grid [i][j].id < temp * temp) {
+              // abajo
               std::cout << "E ";
           }
           if (cell_grid [i][j].id == temp * temp) {
+              // abajo-der
               std::cout << "F ";
           }
           if (i > 0 && i < cell_grid.size()-1 && j == 0) {
+              // izq
               std::cout << "G ";
           }
           if (i > 0 && i < cell_grid.size() - 1 && j == 4) {
+              // der
               std::cout << "H ";
           }
           else {
+              // central
               std::cout << "I ";
           }
       }
@@ -91,10 +101,12 @@ int main(){
   }
 
 
-  std::cout << "window length: " << utils::GetWindowLength() << "\n";
+  //std::cout << "window length: " << utils::GetWindowLength() << "\n";
   
  // utils::ClearScreen();
 CheckCellStatus(cell_grid);
+
+PrintGrid(cell_grid);
 
 DefineInitialStatus(cell_grid.size(), cell_grid);
 
