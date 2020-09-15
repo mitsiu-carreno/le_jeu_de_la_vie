@@ -59,6 +59,7 @@ int main(){
           int temp{ static_cast<int>(cell_grid.size())};
 
           if (cell_grid [i][j].id == 1) {
+              cell_grid[i][j].status;
               std::cout << "A ";
           }
           if (cell_grid [i][j].id > 1 && cell_grid [i][j].id < temp) {
@@ -93,7 +94,6 @@ int main(){
   std::cout << "window length: " << utils::GetWindowLength() << "\n";
   
  // utils::ClearScreen();
-
 CheckCellStatus(cell_grid);
 
 DefineInitialStatus(cell_grid.size(), cell_grid);
