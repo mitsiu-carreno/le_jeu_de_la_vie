@@ -10,9 +10,9 @@
     void PrintStatus(bool cell_status){
       _setmode(_fileno(stdout), _O_U16TEXT);
       if(cell_status == 1){
-        wprintf(cell_states[cell::StateCatalog::alive]);
+        wprintf(cell::states[cell::StateCatalog::alive]);
       }else{
-        wprintf(cell_states[cell::StateCatalog::dead]);
+        wprintf(cel::states[cell::StateCatalog::dead]);
       }
     }
   };
