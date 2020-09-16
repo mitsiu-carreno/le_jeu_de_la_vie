@@ -60,6 +60,7 @@ int main(){
           int temp{ static_cast<int>(cell_grid.size())};
 
           if (cell_grid [i][j].id == 1) {
+              cell_grid[i][j].status;
               // arriba-izq
               std::cout << "A ";
           }
@@ -103,7 +104,6 @@ int main(){
   //std::cout << "window length: " << utils::GetWindowLength() << "\n";
   
  // utils::ClearScreen();
-
 CheckCellStatus(cell_grid);
 
 PrintGrid(cell_grid);

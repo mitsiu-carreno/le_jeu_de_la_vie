@@ -140,7 +140,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\cell.cpp" />
     <ClCompile Include="..\src\coordenada.cpp" />
+    <ClCompile Include="..\src\grid.cpp" />
+    <ClCompile Include="..\src\initialState.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\utils\clearScreen.cpp" />
     <ClCompile Include="..\src\utils\windowLength.cpp" />
