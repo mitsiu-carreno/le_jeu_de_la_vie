@@ -19,7 +19,7 @@ namespace cell{
   };
 
   // Position 0 = dead; 1 = alive
-  const std::array<char[4], 2> states {{" ","\u2589"}};
+  const std::array<char[4], 2> states {{" ","\u2588"}};
   //cell_states[dead] = " ";
   //cell_states[alive] = "\u2589";
   void PrintStatus(bool cell_status);
