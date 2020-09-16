@@ -12,8 +12,9 @@
       if(cell_status == 1){
         wprintf(cell::states[cell::StateCatalog::alive]);
       }else{
-        wprintf(cel::states[cell::StateCatalog::dead]);
+        wprintf(cell::states[cell::StateCatalog::dead]);
       }
+      _setmode(_fileno(stdout), _O_TEXT);
     }
   };
 

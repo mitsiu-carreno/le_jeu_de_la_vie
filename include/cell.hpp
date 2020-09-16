@@ -30,7 +30,7 @@ namespace cell{
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
   namespace cell{
-    const std::array<const wchar_t*, 2> states{{L" ", L"\n2588"}};
+    const std::array<const wchar_t*, 2> states{{L" ", L"\u2588"}};
   };
 
 #elif defined(__APPLE__) || defined(__linux__)
