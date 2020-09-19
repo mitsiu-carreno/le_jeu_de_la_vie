@@ -23,7 +23,7 @@ void CheckCellStatus(std::vector<std::vector<cell::Cell>> grid){
 
 int main(){
 
-  int side_grid = 5;
+  int side_grid = 5;//invocar función del grid 
   //int size_grid = side_grid * side_grid;
 
   std::vector<std::vector<cell::Cell>> cell_grid (side_grid);
@@ -133,7 +133,7 @@ for(size_t i{0}; i<cell_grid.size(); ++i){
     }
     std::cout << "\n";
   }
-  std::array<int,2> tam_grid= GetGridSize( );
-  std::cout<<tam_grid[1];
+ 
 	return 0;
+  
 }
