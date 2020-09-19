@@ -32,8 +32,8 @@ void CheckCellStatus(std::vector<std::vector<cell::Cell>> grid){
  * */
 
 int main(){
-
-  int side_grid = 5;
+  std::array<int,2> tamanio_grid=GetGridSize ( );
+  int side_grid = tamanio_grid[0];
   //int size_grid = side_grid * side_grid;
 
   std::vector<std::vector<cell::Cell>> cell_grid (side_grid);
@@ -66,45 +66,61 @@ int main(){
 
   for (size_t i{ 0 }; i < cell_grid.size(); ++i) {
       for (size_t j{ 0 }; j < cell_grid.size(); ++j) {
-          std::cout << cell_grid[i][j].id ;
-          int temp{ static_cast<int>(cell_grid.size())};
+          std::cout << "ID: "<< cell_grid[i][j].id <<" ";
+          int size { static_cast<int>(cell_grid.size())};
 
-          if (cell_grid [i][j].id == 1) {
-              cell_grid[i][j].status;
-              // arriba-izq
-              std::cout << "A ";
+          if (cell_grid [i][j].id == 1) { //esquina arriba-izquierda
+              int temp;
+              temp = cell_grid[i][j + 1].status + cell_grid[i+1][j + 1].status + cell_grid[i+1][j].status;
+             
+              std::cout << temp <<"  ";
           }
-          if (cell_grid [i][j].id > 1 && cell_grid [i][j].id < temp) {
-              // arriba
-              std::cout << "B ";
+          else if (cell_grid [i][j].id > 1 && cell_grid [i][j].id < size) { // central arriba
+              int temp;
+              temp = cell_grid[i][j + 1].status + cell_grid[i + 1][j + 1].status + cell_grid[i + 1][j].status + cell_grid[i + 1][j-1].status + cell_grid[i][j - 1].status;
+
+              std::cout << temp << "  ";;
           }
-          if (cell_grid [i][j].id == temp) {
-              // arriba-der
-              std::cout << "C ";
+          else if (cell_grid [i][j].id == size) { // esquina arriba-derecha
+              int temp;
+              temp = cell_grid[i][j - 1].status + cell_grid[i + 1][j - 1].status + cell_grid[i + 1][j].status;
+
+              std::cout << temp << "  ";
           }
-          if (cell_grid [i][j].id == temp * temp - (temp - 1)) {
-              // abajo-izq
-              std::cout << "D ";
+          else if (cell_grid [i][j].id == size * size - (size - 1)) { // esquina abajo-izquierda
+              int temp;
+              temp = cell_grid[i-1][j].status + cell_grid[i - 1][j + 1].status + cell_grid[i][j+1].status;
+
+              std::cout << temp << "  ";
           }
-          if (cell_grid [i][j].id > temp* temp - (temp - 1) && cell_grid [i][j].id < temp * temp) {
-              // abajo
-              std::cout << "E ";
+          else if (cell_grid [i][j].id > size* size - (size - 1) && cell_grid [i][j].id < size * size) {  // cental abajo
+              int temp;
+              temp = cell_grid[i][j-1].status + cell_grid[i-1][j-1].status + cell_grid[i-1][j].status + cell_grid[i-1][j+1].status + cell_grid[i][j+1].status;
+
+              std::cout << temp << "  ";
           }
-          if (cell_grid [i][j].id == temp * temp) {
-              // abajo-der
-              std::cout << "F ";
+          else if (cell_grid [i][j].id == size * size) { // esquina abajo-derecha
+              int temp;
+              temp = cell_grid[i][j-1].status + cell_grid[i-1][j-1].status + cell_grid[i-1][j].status;
+
+              std::cout << temp << "  ";
           }
-          if (i > 0 && i < cell_grid.size()-1 && j == 0) {
-              // izq
-              std::cout << "G ";
+          else if (i > 0 && i < cell_grid.size()-1 && j == 0) { //  lateral izquierda
+              int temp;
+              temp = cell_grid[i-1][j].status + cell_grid[i-1][j+1].status + cell_grid[i][j+1].status + cell_grid[i+1][j+1].status + cell_grid[i+1][j].status;
+
+              std::cout << temp << "  ";
           }
-          if (i > 0 && i < cell_grid.size() - 1 && j == 4) {
-              // der
-              std::cout << "H ";
+          else if (i > 0 && i < cell_grid.size() - 1 && j == size-1) {  // lateral derecha 
+              int temp;
+              temp = cell_grid[i-1][j].status + cell_grid[i-1][j-1].status + cell_grid[i][j-1].status + cell_grid[i+1][j-1].status + cell_grid[i+1][j].status;
+
+              std::cout << temp << "  ";
           }
           else {
-              // central
-              std::cout << "I ";
+              int temp;
+              temp = cell_grid[i][j + 1].status + cell_grid[i][j - 1].status + cell_grid[i + 1][j - 1].status + cell_grid[i + 1][j].status + cell_grid[i + 1][j + 1].status + cell_grid[i - 1][j + 1].status + cell_grid[i - 1][j].status + cell_grid[i - 1][j - 1].status;
+              std::cout << temp << "  ";
           }
       }
       std::cout << "\n";
@@ -127,6 +143,7 @@ for(size_t i{0}; i<cell_grid.size(); ++i){
     }
     std::cout << "\n";
   }
-
+ 
 	return 0;
+  
 }
