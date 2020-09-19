@@ -14,6 +14,7 @@
       }else{
         wprintf(cell::states[cell::StateCatalog::dead]);
       }
+      _setmode(_fileno(stdout), _O_TEXT);
     }
   };
 
