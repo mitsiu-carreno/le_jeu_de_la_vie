@@ -1,3 +1,32 @@
-﻿  main.cpp
-C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(22,45): warning C4566: el carácter representado por el nombre de carácter universal '\u2588' no se puede representar en la página de códigos actual (1252)
-  le_jue_de_la_vie.vcxproj -> C:\Users\edgar\source\repos\le_jeu_de_la_vie\le_jue_de_la_vie\Debug\le_jue_de_la_vie.exe
+﻿  cell.cpp
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(22,1): error C2059: error de sintaxis: '<<'
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(23,39): error C2143: error de sintaxis: falta ';' delante de '{'
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(23,39): error C2447: '{': falta el encabezado de función (¿lista formal de estilo anterior?)
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(23,45): warning C4566: el carácter representado por el nombre de carácter universal '\u2588' no se puede representar en la página de códigos actual (1252)
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(24,1): error C2059: error de sintaxis: '=='
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\src\cell.cpp(15,28): error C2653: 'cel': no es un nombre de clase o espacio de nombres
+  grid.cpp
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(22,1): error C2059: error de sintaxis: '<<'
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(23,39): error C2143: error de sintaxis: falta ';' delante de '{'
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(23,39): error C2447: '{': falta el encabezado de función (¿lista formal de estilo anterior?)
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(23,45): warning C4566: el carácter representado por el nombre de carácter universal '\u2588' no se puede representar en la página de códigos actual (1252)
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(24,1): error C2059: error de sintaxis: '=='
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\src\grid.cpp(25,10): error C2039: "PrintStatus": no es un miembro de "cell"
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(36): message : vea la declaración de 'cell'
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\src\grid.cpp(25,21): error C3861: 'PrintStatus': no se encontró el identificador
+  initialState.cpp
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(22,1): error C2059: error de sintaxis: '<<'
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(23,39): error C2143: error de sintaxis: falta ';' delante de '{'
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(23,39): error C2447: '{': falta el encabezado de función (¿lista formal de estilo anterior?)
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(23,45): warning C4566: el carácter representado por el nombre de carácter universal '\u2588' no se puede representar en la página de códigos actual (1252)
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(24,1): error C2059: error de sintaxis: '=='
+  main.cpp
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(22,1): error C2059: error de sintaxis: '<<'
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(23,39): error C2143: error de sintaxis: falta ';' delante de '{'
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(23,39): error C2447: '{': falta el encabezado de función (¿lista formal de estilo anterior?)
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(23,45): warning C4566: el carácter representado por el nombre de carácter universal '\u2588' no se puede representar en la página de códigos actual (1252)
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(24,1): error C2059: error de sintaxis: '=='
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\src\main.cpp(132,13): error C2039: "PrintStatus": no es un miembro de "cell"
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\include\cell.hpp(36): message : vea la declaración de 'cell'
+C:\Users\edgar\source\repos\le_jeu_de_la_vie\src\main.cpp(132,24): error C3861: 'PrintStatus': no se encontró el identificador
+  Generando código...
