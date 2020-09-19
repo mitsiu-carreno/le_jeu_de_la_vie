@@ -42,7 +42,7 @@ std::array<int,2>  GetGridSize ( ){
 // PrintGrid
 void PrintGrid(std::vector<std::vector<cell::Cell>> grid ){
 
-	for(std::vector ext_vector : grid ){
+	for(std::vector<cell::Cell> ext_vector : grid ){
 		
 		for(cell::Cell cell : ext_vector){
 			
