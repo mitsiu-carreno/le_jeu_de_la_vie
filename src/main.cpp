@@ -22,8 +22,8 @@ void CheckCellStatus(std::vector<std::vector<cell::Cell>> grid){
 
 
 int main(){
-
-  int side_grid = 5;//invocar función del grid 
+  std::array<int,2> tamanio_grid=GetGridSize ( );
+  int side_grid = tamanio_grid[0];
   //int size_grid = side_grid * side_grid;
 
   std::vector<std::vector<cell::Cell>> cell_grid (side_grid);
