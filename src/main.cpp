@@ -111,7 +111,7 @@ int main(){
 
               std::cout << temp << "  ";
           }
-          else if (i > 0 && i < cell_grid.size() - 1 && j == size-1) {  // lateral derecha 
+          else if (i > 0 && i < cell_grid.size() - 1 && j == static_cast<size_t>(size)-1) {  // lateral derecha 
               int temp;
               temp = cell_grid[i-1][j].status + cell_grid[i-1][j-1].status + cell_grid[i][j-1].status + cell_grid[i+1][j-1].status + cell_grid[i+1][j].status;
 
