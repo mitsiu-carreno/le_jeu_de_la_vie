@@ -117,6 +117,7 @@ for(size_t i{0}; i<cell_grid.size(); ++i){
     }
     std::cout << "\n";
   }
-
+  std::array<int,2> tam_grid= GetGridSize( );
+  std::cout<<tam_grid[1];
 	return 0;
 }
