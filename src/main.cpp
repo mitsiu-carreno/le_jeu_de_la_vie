@@ -55,17 +55,8 @@ int main(){
     }
   }
   //std::vector<cell::Cell> cell_grid (size_grid);
-  /////////------
-  // PrintDebug
-  for(size_t i{0}; i<cell_grid.size(); ++i){
-    for(size_t j{0}; j<cell_grid[i].size(); ++j){
-      std::cout << cell_grid[i][j].status << " id: " << cell_grid[i][j].id << " - " << cell_grid[i][j].coor[0] << "," << cell_grid[i][j].coor[1];
-      //PrintStatus(cell_grid[i][j].status);
-    }
-    std::cout << "\n";
-  }
 
-  /////////------
+  PrintGridDebug(cell_grid);
 
   for (size_t i{ 0 }; i < cell_grid.size(); ++i) {
       for (size_t j{ 0 }; j < cell_grid.size(); ++j) {
