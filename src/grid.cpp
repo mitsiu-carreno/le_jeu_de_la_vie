@@ -34,11 +34,6 @@ std::array<int,2>  GetGridSize ( ){
 	}
 	return tamanio_grid_ajustado;
 }
-
- 
-
-
-
 // PrintGrid
 void PrintGrid(std::vector<std::vector<cell::Cell>> grid ){
 
@@ -52,4 +47,25 @@ void PrintGrid(std::vector<std::vector<cell::Cell>> grid ){
 	}
 }
 
+// Check cell status
+void CheckCellStatus(std::vector<std::vector<cell::Cell>> grid){
+	
+	for(size_t i {0} ; i < grid.size() ; ++i){
+	
+		for(size_t j {0}; j < grid[i].size(); ++j ){
+ 
+                        std::cout << grid[i][j].id - 1 << " -> " << grid[i][j].id << " <- " << grid[i][j].id + 1 << "\n";
+		
+		}
+	}
+}
+
+/*cambiar a un for normal 
+grid[x-1][y-1]
+grid[x-1][y-1].status
+if (grid[x][y].id == id_busqueda){
+obtener status
+y-1 devuelve cel, esta cell tiene status 
+grid[x-1][y-1]
+ */
 
