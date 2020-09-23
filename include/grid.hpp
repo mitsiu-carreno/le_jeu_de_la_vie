@@ -2,9 +2,13 @@
 #define GRID_H
 #include<vector>
 // Forward declarations
-void CreateGrid();
+
+std::vector<std::vector<cell::Cell>> Initialize_Grid ();
+std::array<int,2> GetGridSize( );
 void PrintGrid(std::vector<std::vector<cell::Cell>> grid );
-std::array<int,2> GetGridSize ( );
+void DefineInitialStatus (int cell_gridsize, std::vector<std::vector<cell::Cell>> & cell_grid);
+
+
 
 #endif
 

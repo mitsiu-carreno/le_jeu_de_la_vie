@@ -34,26 +34,7 @@ void CheckCellStatus(std::vector<std::vector<cell::Cell>> grid){
 
 int main(){
   /////////------
-  std::array<int,2> tamanio_grid=GetGridSize ( );
-  int side_grid = tamanio_grid[0];
-  //int size_grid = side_grid * side_grid;
-
-  std::vector<std::vector<cell::Cell>> cell_grid (side_grid);
-  int contador_id = 1;
-  
-  for(int i{0}; i < side_grid; ++i){
-    cell_grid[i].resize(side_grid);
-
-    for(int j{0}; j < side_grid; ++j){
-      cell::Cell cell;
-      cell.status = true;
-      cell.coor[0] = i;
-      cell.coor[1] = j;
-      cell.id = contador_id;
-      cell_grid[i][j] = cell;
-      ++contador_id;
-    }
-  }
+  std::vector<std::vector<cell::Cell>> cell_grid =Initialize_Grid (); 
   //std::vector<cell::Cell> cell_grid (size_grid);
   /////////------
   // PrintDebug
@@ -137,7 +118,7 @@ int main(){
 
   PrintGrid(cell_grid);
 
-  DefineInitialStatus(cell_grid.size(), cell_grid);
+  //DefineInitialStatus(cell_grid.size(), cell_grid);
 
  
 	return 0;
