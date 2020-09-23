@@ -7,46 +7,12 @@
 #include <iostream>
 #include <vector>
 
-/////////------
-void CheckCellStatus(std::vector<std::vector<cell::Cell>> grid){ 
-	
-	for(size_t i {0} ; i < grid.size() ; ++i){
-	
-		for(size_t j {0}; j < grid[i].size(); ++j ){
-
-			std::cout << grid[i][j].id - 1 << " -> " << grid[i][j].id << " <- " << grid[i][j].id + 1 << "\n";
-
-		}
-	}
-}
-
-
-/*cambiar a un for normal 
- * grid[x-1][y-1]
- * grid[x-1][y-1].status
- * if (grid[x][y].id == id_busqueda){
-// obtener status
- * y-1 devuelve cel, esta cell tiene status 
- * grid[x-1][y-1]
- * 
- * */
-/////////------
-
 int main(){
   /////////------
   std::vector<std::vector<cell::Cell>> cell_grid =Initialize_Grid (); 
   //std::vector<cell::Cell> cell_grid (size_grid);
-  /////////------
-  // PrintDebug
-  for(size_t i{0}; i<cell_grid.size(); ++i){
-    for(size_t j{0}; j<cell_grid[i].size(); ++j){
-      std::cout << cell_grid[i][j].status << " id: " << cell_grid[i][j].id << " - " << cell_grid[i][j].coor[0] << "," << cell_grid[i][j].coor[1];
-      //PrintStatus(cell_grid[i][j].status);
-    }
-    std::cout << "\n";
-  }
 
-  /////////------
+  PrintGridDebug(cell_grid);
 
   for (size_t i{ 0 }; i < cell_grid.size(); ++i) {
       for (size_t j{ 0 }; j < cell_grid.size(); ++j) {
