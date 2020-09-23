@@ -7,7 +7,7 @@
 #include <iostream>
 #include <vector>
 
-
+/////////------
 void CheckCellStatus(std::vector<std::vector<cell::Cell>> grid){ 
 	
 	for(size_t i {0} ; i < grid.size() ; ++i){
@@ -30,14 +30,15 @@ void CheckCellStatus(std::vector<std::vector<cell::Cell>> grid){
  * grid[x-1][y-1]
  * 
  * */
+/////////------
 
 int main(){
+  /////////------
   std::array<int,2> tamanio_grid=GetGridSize ( );
   int side_grid = tamanio_grid[0];
   //int size_grid = side_grid * side_grid;
 
   std::vector<std::vector<cell::Cell>> cell_grid (side_grid);
-  
   int contador_id = 1;
   
   for(int i{0}; i < side_grid; ++i){
@@ -54,8 +55,8 @@ int main(){
     }
   }
   //std::vector<cell::Cell> cell_grid (size_grid);
-
-  
+  /////////------
+  // PrintDebug
   for(size_t i{0}; i<cell_grid.size(); ++i){
     for(size_t j{0}; j<cell_grid[i].size(); ++j){
       std::cout << cell_grid[i][j].status << " id: " << cell_grid[i][j].id << " - " << cell_grid[i][j].coor[0] << "," << cell_grid[i][j].coor[1];
@@ -63,6 +64,8 @@ int main(){
     }
     std::cout << "\n";
   }
+
+  /////////------
 
   for (size_t i{ 0 }; i < cell_grid.size(); ++i) {
       for (size_t j{ 0 }; j < cell_grid.size(); ++j) {
@@ -126,23 +129,16 @@ int main(){
       std::cout << "\n";
   }
 
-
+  /////////------
   //std::cout << "window length: " << utils::GetWindowLength() << "\n";
-  
- // utils::ClearScreen();
-CheckCellStatus(cell_grid);
 
-PrintGrid(cell_grid);
+  // utils::ClearScreen();
+  CheckCellStatus(cell_grid);
 
-DefineInitialStatus(cell_grid.size(), cell_grid);
+  PrintGrid(cell_grid);
 
-for(size_t i{0}; i<cell_grid.size(); ++i){
-    for(size_t j{0}; j<cell_grid[i].size(); ++j){
-      std::cout << cell_grid[i][j].status << " id: " << cell_grid[i][j].id << " - " << cell_grid[i][j].coor[0] << "," << cell_grid[i][j].coor[1] << "\n";
-      cell::PrintStatus(cell_grid[i][j].status);
-    }
-    std::cout << "\n";
-  }
+  DefineInitialStatus(cell_grid.size(), cell_grid);
+
  
 	return 0;
   
