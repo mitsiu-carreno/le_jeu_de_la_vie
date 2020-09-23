@@ -2,14 +2,15 @@
 #define GRID_H
 #include<vector>
 // Forward declarations
-void CreateGrid();
-void PrintGridDebug(std::vector<std::vector<cell::Cell>> cell_grid);
-std::vector<std::vector<cell::Cell>> Initialize_Grid ();
-std::array<int,2> GetGridSize( );
-void PrintGrid(std::vector<std::vector<cell::Cell>> grid );
-void DefineInitialStatus (int cell_gridsize, std::vector<std::vector<cell::Cell>> & cell_grid);
-void CheckCellStatus(std::vector<std::vector<cell::Cell>> grid );
-
+namespace Grid {
+	void CreateGrid();
+	void PrintGridDebug(std::vector<std::vector<cell::Cell>> cell_grid);
+	std::vector<std::vector<cell::Cell>> Initialize_Grid ();
+	std::array<int,2> GetGridSize( );
+	void PrintGrid(std::vector<std::vector<cell::Cell>> grid );
+	void DefineInitialStatus (int cell_gridsize, std::vector<std::vector<cell::Cell>> & cell_grid);
+	void CheckCellStatus(std::vector<std::vector<cell::Cell>> grid );
+}
 
 #endif
 

@@ -9,15 +9,15 @@
 
 int main(){
   /////////------
-  std::vector<std::vector<cell::Cell>> cell_grid =Initialize_Grid (); 
+  std::vector<std::vector<cell::Cell>> cell_grid = Grid::Initialize_Grid (); 
   //std::vector<cell::Cell> cell_grid (size_grid);
 
-  PrintGridDebug(cell_grid);
+  Grid::PrintGridDebug(cell_grid);
 
   for (size_t i{ 0 }; i < cell_grid.size(); ++i) {
       for (size_t j{ 0 }; j < cell_grid.size(); ++j) {
           std::cout << "ID: "<< cell_grid[i][j].id <<" ";
-          int size { static_cast<int>(cell_grid.size())};
+          int size {static_cast<int>(cell_grid.size())};
 
           if (cell_grid [i][j].id == 1) { //esquina arriba-izquierda
               int temp;
@@ -80,9 +80,9 @@ int main(){
   //std::cout << "window length: " << utils::GetWindowLength() << "\n";
 
   // utils::ClearScreen();
-  CheckCellStatus(cell_grid);
+  Grid::CheckCellStatus(cell_grid);
 
-  PrintGrid(cell_grid);
+  Grid::PrintGrid(cell_grid);
 
   //DefineInitialStatus(cell_grid.size(), cell_grid);
 
