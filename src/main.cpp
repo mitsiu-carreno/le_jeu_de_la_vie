@@ -3,7 +3,6 @@
 #include "windowLength.hpp"
 #include "clearScreen.hpp"
 #include "sleepThread.hpp"
-#include "initialState.hpp"
 #include <iostream>
 #include <vector>
 
