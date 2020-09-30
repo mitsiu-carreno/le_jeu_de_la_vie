@@ -89,7 +89,7 @@ namespace Grid {
 	}
 
 // function to define initial status 
-	void DefineInitialStatus (int &cell_gridsize, std::vector<std::vector<cell::Cell>> &cell_grid) {
+	void DefineInitialStatus (int cell_gridsize, std::vector<std::vector<cell::Cell>> &cell_grid) {
 		int status_div {0};
 		
 		std::cout << "Para definir el estatus inicial de las celulas, escoja un número del 1 al "<< cell_gridsize<<"\n";
