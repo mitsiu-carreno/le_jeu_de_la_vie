@@ -12,7 +12,7 @@ int main(){
   std::vector<std::vector<cell::Cell>> cell_grid = Grid::Initialize_Grid (); 
   //std::vector<cell::Cell> cell_grid (size_grid);
 
-  Grid::PrintGridDebug(cell_grid);
+  Grid::PrintGridDebug(cell_grid);  // Dani
 
   for (size_t i{ 0 }; i < cell_grid.size(); ++i) {
       for (size_t j{ 0 }; j < cell_grid.size(); ++j) {
@@ -80,7 +80,7 @@ int main(){
   //std::cout << "window length: " << utils::GetWindowLength() << "\n";
 
   // utils::ClearScreen();
-  Grid::CheckCellStatus(cell_grid);
+  Grid::CheckCellStatus(cell_grid);   // Mariana
 
   Grid::PrintGrid(cell_grid);
 
