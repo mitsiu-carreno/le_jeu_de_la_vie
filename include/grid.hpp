@@ -4,7 +4,7 @@
 // Forward declarations
 namespace Grid {
 	void CreateGrid();
-	void PrintGridDebug(std::vector<std::vector<cell::Cell>> cell_grid);
+	void PrintGridDebug(std::vector<std::vector<cell::Cell>> &cell_grid);
 	std::vector<std::vector<cell::Cell>> Initialize_Grid ();
 	std::array<int,2> GetGridSize( );
 	void PrintGrid(std::vector<std::vector<cell::Cell>> grid );

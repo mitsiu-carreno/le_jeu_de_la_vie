@@ -70,7 +70,7 @@ namespace Grid {
 	}
 
 // dbg function
-	void PrintGridDebug(std::vector<std::vector<cell::Cell>> cell_grid){
+	void PrintGridDebug(std::vector<std::vector<cell::Cell>> &cell_grid){
 		for(size_t i{0}; i<cell_grid.size(); ++i){
 			for(size_t j{0}; j<cell_grid[i].size(); ++j){
 				std::cout << cell_grid[i][j].status << " id: " << cell_grid[i][j].id << " - " << cell_grid[i][j].coor[0] << "," << cell_grid[i][j].coor[1] << "\n";
@@ -124,4 +124,3 @@ obtener status
 y-1 devuelve cel, esta cell tiene status 
 grid[x-1][y-1]
  */
-
