@@ -106,6 +106,55 @@ namespace Grid {
 		}
 	}
 
+  void GetNeighbours(std::vector<std::vector<cell::Cell>> &grid){  
+    for(size_t row{0}; row<grid.size(); ++row){
+      for(size_t col{0}; col<grid[0].size(); ++col){
+        int size = static_cast<int>(grid.size()); 
+
+        int upper_border = col+1;
+        int left_border = 1+(size*row);
+        /*
+        int right_border = size*(row+1);
+        int bottom_border = (size*(size-1))+1+col;
+        */
+        if(grid[row][col].id == upper_border && upper_border == left_border){
+          std::cout << grid[row][col].id << " is on esquina izquierda sup\n";
+        }
+
+        
+        /*std::cout << "  " << upper_border << "\n";
+        std::cout << left_border  << " " << grid[row][col].id << " " << right_border << "\n";
+        std::cout << " " << bottom_border << "\n";
+        */
+        /*
+        switch(grid[row][col].id){
+          case 1 ... 25:
+            std::cout << grid[row][col].id << "\n";
+            break;
+            
+          case upper_border:
+            std::cout << grid[row][col].id << " is on upper border\n";
+            break;
+          case left_border:
+            std::cout << grid[row][col].id << " is on left border\n";
+            break;
+          case right_border:
+            std::cout << grid[row][col].id << " is on right border\n";
+            break;
+          case bottom_border:
+            std::cout << grid[row][col].id << " is on bottom border\n";
+            break;
+            
+          default:
+            //std::cout << " "
+            break;
+        }
+        */
+      }
+    }
+
+  }
+
 // developing ... check cell status function
 	void CheckCellStatus(std::vector<std::vector<cell::Cell>> &grid){
 		for(size_t i {0} ; i < grid.size() ; ++i){

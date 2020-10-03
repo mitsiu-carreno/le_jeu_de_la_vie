@@ -11,8 +11,11 @@ int main(){
   std::vector<std::vector<cell::Cell>> cell_grid = Grid::Initialize_Grid (); 
   //std::vector<cell::Cell> cell_grid (size_grid);
 
-  Grid::PrintGridDebug(cell_grid);  // Dani
+  //Grid::PrintGridDebug(cell_grid); 
+  Grid::GetNeighbours(cell_grid);
 
+
+  /////////------
   for (size_t i{ 0 }; i < cell_grid.size(); ++i) {
       for (size_t j{ 0 }; j < cell_grid.size(); ++j) {
           std::cout << "ID: "<< cell_grid[i][j].id <<" ";
