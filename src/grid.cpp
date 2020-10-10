@@ -2,8 +2,8 @@
 #include "cell.hpp"
 #include "windowLength.hpp"
 #include "grid.hpp"
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 
 
 // Include PrintGrid
@@ -106,54 +106,39 @@ namespace Grid {
 		}
 	}
 
-  void GetNeighbours(std::vector<std::vector<cell::Cell>> &grid){  
-    for(size_t row{0}; row<grid.size(); ++row){
-      for(size_t col{0}; col<grid[0].size(); ++col){
-        int size = static_cast<int>(grid.size()); 
+  void CalcNextStatus(std::vector<std::vector<cell::Cell>> &grid){  
+    for(size_t y{0}; y<grid.size(); ++y){
+      for(size_t x{0}; x<grid[0].size(); ++x){
 
-        int upper_border = col+1;
-        int left_border = 1+(size*row);
-        /*
-        int right_border = size*(row+1);
-        int bottom_border = (size*(size-1))+1+col;
-        */
-        if(grid[row][col].id == upper_border && upper_border == left_border){
-          std::cout << grid[row][col].id << " is on esquina izquierda sup\n";
-        }
-
-        
-        /*std::cout << "  " << upper_border << "\n";
-        std::cout << left_border  << " " << grid[row][col].id << " " << right_border << "\n";
-        std::cout << " " << bottom_border << "\n";
-        */
-        /*
-        switch(grid[row][col].id){
-          case 1 ... 25:
-            std::cout << grid[row][col].id << "\n";
-            break;
-            
-          case upper_border:
-            std::cout << grid[row][col].id << " is on upper border\n";
-            break;
-          case left_border:
-            std::cout << grid[row][col].id << " is on left border\n";
-            break;
-          case right_border:
-            std::cout << grid[row][col].id << " is on right border\n";
-            break;
-          case bottom_border:
-            std::cout << grid[row][col].id << " is on bottom border\n";
-            break;
-            
-          default:
-            //std::cout << " "
-            break;
-        }
-        */
+        std::cout << "x: " << x << " y: " << y << "\n";
+        int val {GetNeighboursAlive(x, y, grid)};
+        std::cout << val << "\n";
+        // Process status based neighbour 
       }
     }
-
   }
+  
+
+  int GetNeighboursAlive(int cell_x, int cell_y, std::vector<std::vector<cell::Cell>> &grid){
+    int neighbours_alive {0};
+    //grid[x-1][y].status
+
+    int y_upper = (cell_y == 0 ? 0 : cell_y-1);
+    int y_lower = (cell_y == static_cast<int>(grid.size()-1) ? static_cast<int>(grid.size()-1) : cell_y+1);
+    int x_lefter = (cell_x == 0 ? 0 : cell_x-1);
+    int x_righter = (cell_x == static_cast<int>(grid.size()-1) ? static_cast<int>(grid.size()-1) : cell_x+1);
+
+    for(int y{y_upper}; y <= y_lower; ++y){
+      for(int x{x_lefter}; x <= x_righter; ++x){
+        //std::cout << x << ", " << y << "\n";
+        if(x != cell_x && cell_y != y){
+          neighbours_alive = neighbours_alive + grid[y][x].status; 
+        }
+      }
+    }
+    return neighbours_alive;
+  }
+
 
 // developing ... check cell status function
 	void CheckCellStatus(std::vector<std::vector<cell::Cell>> &grid){

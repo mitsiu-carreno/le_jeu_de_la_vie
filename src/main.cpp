@@ -12,7 +12,7 @@ int main(){
   //std::vector<cell::Cell> cell_grid (size_grid);
 
   //Grid::PrintGridDebug(cell_grid); 
-  Grid::GetNeighbours(cell_grid);
+  Grid::CalcNextStatus(cell_grid);
 
 
   /////////------
