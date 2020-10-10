@@ -121,16 +121,15 @@ namespace Grid {
 
   int GetNeighboursAlive(int cell_x, int cell_y, std::vector<std::vector<cell::Cell>> &grid){
     int neighbours_alive {0};
-    //grid[x-1][y].status
+    int grid_size = static_cast<int>(grid.size()-1);
 
     int y_upper = (cell_y == 0 ? 0 : cell_y-1);
-    int y_lower = (cell_y == static_cast<int>(grid.size()-1) ? static_cast<int>(grid.size()-1) : cell_y+1);
+    int y_lower = (cell_y == grid_size ? grid_size : cell_y+1);
     int x_lefter = (cell_x == 0 ? 0 : cell_x-1);
-    int x_righter = (cell_x == static_cast<int>(grid.size()-1) ? static_cast<int>(grid.size()-1) : cell_x+1);
+    int x_righter = (cell_x == grid_size ? grid_size : cell_x+1);
 
     for(int y{y_upper}; y <= y_lower; ++y){
       for(int x{x_lefter}; x <= x_righter; ++x){
-        //std::cout << x << ", " << y << "\n";
         if(x != cell_x && cell_y != y){
           neighbours_alive = neighbours_alive + grid[y][x].status; 
         }
