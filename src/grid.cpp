@@ -108,9 +108,8 @@ namespace Grid {
     for(size_t y{0}; y<grid.size(); ++y){
       for(size_t x{0}; x<grid[0].size(); ++x){
 
-        std::cout << "x: " << x << " y: " << y << "\n";
-        int val {GetNeighboursAlive(x, y, grid)};
-        std::cout << val << "\n";
+        int neighbours_alive {GetNeighboursAlive(x, y, grid)};
+        std::cout << neighbours_alive << "\n"; // Remove after debugging
         // Process status based neighbour 
       }
     }
