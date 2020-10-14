@@ -9,7 +9,6 @@ namespace Grid {
 	std::array<int,2> GetGridSize( );
 	void PrintGrid(std::vector<std::vector<cell::Cell>> grid );
 	void DefineInitialStatus (int cell_gridsize, std::vector<std::vector<cell::Cell>> &cell_grid);
-	void CheckCellStatus(std::vector<std::vector<cell::Cell>> &grid );
 
   void CalcNextStatus(std::vector<std::vector<cell::Cell>> &grid);
   int GetNeighboursAlive(int cell_x, int cell_y, std::vector<std::vector<cell::Cell>> &grid);

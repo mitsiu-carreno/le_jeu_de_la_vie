@@ -17,8 +17,7 @@ int main(){
   //std::cout << "window length: " << utils::GetWindowLength() << "\n";
 
   // utils::ClearScreen();
-  Grid::CheckCellStatus(cell_grid);   // Mariana
-
+  
   Grid::PrintGrid(cell_grid);
 
   //DefineInitialStatus(cell_grid.size(), cell_grid);
