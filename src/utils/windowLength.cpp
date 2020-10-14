@@ -26,7 +26,7 @@
       ioctl(STDOUT_FILENO, TIOCGWINSZ, &size);
       //std::cout << size.ws_col << "\n";
       //std::cout << size.ws_row << "\n";
-      return {size.ws_col,size.ws_row};
+      return {{size.ws_col,size.ws_row}};
     }
   }      
 #else
