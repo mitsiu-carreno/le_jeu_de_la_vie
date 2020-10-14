@@ -184,6 +184,8 @@ namespace Grid {
     return neighbours_alive;
   }
   
+//cambio +
+
 void SetNextGen (std::vector<std::vector<cell::Cell>> &cell_grid){
 			for(size_t i{0}; i<cell_grid.size(); ++i){
 			for(size_t j{0}; j<cell_grid[i].size(); ++j){
