@@ -39,6 +39,39 @@ namespace Grid {
 		return cell_grid;
 	}
 	
+	//Funcion que define el new status de las celulas
+	int DefineNewStatus(bool cell_status, int neighbours_alive) {
+		int new_cell_status;
+		if (cell_status == 1) {
+			switch (neighbours_alive) {
+			case 2:
+				new_cell_status = 1;
+				break;
+			case 3:
+				new_cell_status = 1;
+				break;
+			default:
+				new_cell_status = 0;
+				break;
+			}
+		}
+		if (cell_status == 0) {
+			switch (neighbours_alive) {
+			case 2:
+				new_cell_status = 1;
+				break;
+			case 3:
+				new_cell_status = 1;
+				break;
+			default:
+				new_cell_status = 0;
+				break;
+			}
+		}
+		return new_cell_status;
+	}
+
+
 	std::array<int,2> GetGridSize ( ){
 		
 		std::array<int,2> col_row {utils::GetWindowLength()};//col, row
@@ -111,6 +144,8 @@ namespace Grid {
         int neighbours_alive {GetNeighboursAlive(x, y, grid)};
         std::cout << neighbours_alive << "\n"; // Remove after debugging
         // Process status based neighbour 
+
+		grid[y][x].next_status = DefineNewStatus(grid[y][x].current_status, neighbours_alive);
       }
     }
   }
