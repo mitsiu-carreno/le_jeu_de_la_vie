@@ -12,6 +12,7 @@ namespace Grid {
 
   void CalcNextStatus(std::vector<std::vector<cell::Cell>> &grid);
   int GetNeighboursAlive(int cell_x, int cell_y, std::vector<std::vector<cell::Cell>> &grid);
+  void SetNextGen (std::vector<std::vector<cell::Cell>> &cell_grid);
 }
 
 #endif

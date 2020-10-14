@@ -149,4 +149,16 @@ namespace Grid {
     }
     return neighbours_alive;
   }
+  
+void SetNextGen (std::vector<std::vector<cell::Cell>> &cell_grid){
+			for(size_t i{0}; i<cell_grid.size(); ++i){
+			for(size_t j{0}; j<cell_grid[i].size(); ++j){
+					cell_grid[i][j].current_status= cell_grid[i][j].next_status;
+					cell_grid[i][j].next_status=0; 
+				}
+			}
+		}
+
 }
+
+
