@@ -11,9 +11,10 @@ namespace cell{
   };
 
   struct Cell{
-    bool status;
-    std::array<int, 2> coor;
+    bool current_status;
+    //std::array<int, 2> coor;
     int id;
+    bool next_status;
     // int coor_x;
     // int coor_y;
   };

@@ -27,9 +27,7 @@ namespace Grid {
 			
 			for(int j{0}; j < side_grid; ++j){
 				cell::Cell cell;
-				cell.status = true;
-				cell.coor[0] = i;
-				cell.coor[1] = j;
+				cell.current_status = true;
 				cell.id = contador_id;
 				cell_grid[i][j] = cell;
 				++contador_id;
@@ -73,7 +71,7 @@ namespace Grid {
 	void PrintGridDebug(std::vector<std::vector<cell::Cell>> &cell_grid){
 		for(size_t i{0}; i<cell_grid.size(); ++i){
 			for(size_t j{0}; j<cell_grid[i].size(); ++j){
-				std::cout << cell_grid[i][j].status << " id: " << cell_grid[i][j].id << " - " << cell_grid[i][j].coor[0] << "," << cell_grid[i][j].coor[1] << "\n";
+				std::cout << cell_grid[i][j].current_status << " id: " << cell_grid[i][j].id << " - " << j << "," << i << "\n";
 			}
 		}
 	}
@@ -82,7 +80,7 @@ namespace Grid {
 	void PrintGrid(std::vector<std::vector<cell::Cell>> grid ){
 		for(std::vector<cell::Cell> ext_vector : grid ){
 			for(cell::Cell cell : ext_vector){
-				cell::PrintStatus(cell.status);
+				cell::PrintStatus(cell.current_status);
 			}
 			std::cout << "\n";
 		}
@@ -98,9 +96,9 @@ namespace Grid {
 		for(size_t i{0}; i<cell_grid.size(); ++i){
 			for(size_t j{0}; j<cell_grid[i].size(); ++j){
 				if (cell_grid[i][j].id%status_div==0){
-					cell_grid[i][j].status=1;
+					cell_grid[i][j].current_status=1;
 				} else {
-					cell_grid[i][j].status=0;
+					cell_grid[i][j].current_status=0;
 				}
 			}
 		}
@@ -130,8 +128,22 @@ namespace Grid {
 
     for(int y{y_upper}; y <= y_lower; ++y){
       for(int x{x_lefter}; x <= x_righter; ++x){
-        if(x != cell_x && cell_y != y){
-          neighbours_alive = neighbours_alive + grid[y][x].status; 
+        /* 1)
+        if((x != cell_x && cell_y != y) || (x == cell_x && y != cell_y) || (x != cell_x && y == cell_y) ){
+          neighbours_alive = neighbours_alive + grid[y][x].current_status; 
+        }
+        */
+
+        /* 2)
+        if(x == cell_x && y == cell_y){
+        
+        }else{
+          neighbours_alive = neighbours_alive + grid[y][x].current_status; 
+        }
+        */
+
+        if(x != cell_x || y != cell_y){
+          neighbours_alive = neighbours_alive + grid[y][x].current_status;
         }
       }
     }
