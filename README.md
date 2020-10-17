@@ -1,6 +1,6 @@
-# Banner
+# Le jeu de la vie
 ## Description
-This project aims to receive a string and display a bigger and stylized version of such string
+This project aims to recreate the famous game life created by John Horton Conway.
 
 ## Structure
 Folder | Description | File extension
