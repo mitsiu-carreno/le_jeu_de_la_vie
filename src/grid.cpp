@@ -1,17 +1,8 @@
-// Includes GetGridSize
 #include "cell.hpp"
 #include "windowLength.hpp"
 #include "grid.hpp"
 #include <iostream>
 #include <vector>
-
-
-// Include PrintGrid
-
-
-// GetGridSize
-
-//OBTENER DIMENSIONES DE LA PANTALLA
 
 namespace Grid {
 
@@ -100,30 +91,7 @@ namespace Grid {
 		return tamanio_grid_ajustado;
 	}
 
-// dbg function
-	void PrintGridDebug(std::vector<std::vector<cell::Cell>> &cell_grid){
-		for(size_t i{0}; i<cell_grid.size(); ++i){
-			for(size_t j{0}; j<cell_grid[i].size(); ++j){
-				std::cout << cell_grid[i][j].current_status << " id: " << cell_grid[i][j].id << " - " << j << "," << i << "\n";
-			}
-		}
-	}
-
 // print cell grid function
-  void PrintGrid(std::vector<std::vector<cell::Cell>> grid ){
-		int cells_alive_by_cicle{ 0 };
-		for(std::vector<cell::Cell> ext_vector : grid ){
-			for(cell::Cell cell : ext_vector){
-				cell::PrintStatus(cell.current_status);
-
-				//Funcion para contar cuantas celulas vivas existen por generacion
-				cells_alive_by_cicle = cells_alive_by_cicle + cell.current_status;
-			}
-			std::cout << "\n";
-		}
-		std::cout << "Cells alive: " << cells_alive_by_cicle << "\n";
-	}
-/*
 	void PrintGrid(std::vector<std::vector<cell::Cell>> grid ){
 		for(std::vector<cell::Cell> ext_vector : grid ){
 			for(cell::Cell cell : ext_vector){
@@ -132,7 +100,10 @@ namespace Grid {
 			std::cout << "\n";
 		}
 	}
-*/
+
+  void PrintInfo(int gen, int alives){
+    std::cout << "Gen: " << gen << " Cells alive: " << alives << "\n"; 
+  }
 // function to define initial status
 	void DefineInitialStatus (int cell_gridsize, std::vector<std::vector<cell::Cell>> &cell_grid) {
 		int status_div {0};
@@ -150,6 +121,18 @@ namespace Grid {
 			}
 		}
 	}
+
+  int GetCurrenAlive(const std::vector<std::vector<cell::Cell>> &grid){
+    int cells_alive_by_cicle {0};
+    for(size_t y{0}; y<grid.size(); ++y){
+      for(size_t x{0}; x<grid[0].size(); ++x){
+
+				//Funcion para contar cuantas celulas vivas existen por generacion
+				cells_alive_by_cicle = cells_alive_by_cicle + grid[y][x].current_status;
+      }
+    }
+    return cells_alive_by_cicle;
+  }
 
   void CalcNextStatus(std::vector<std::vector<cell::Cell>> &grid){
     for(size_t y{0}; y<grid.size(); ++y){
@@ -176,20 +159,6 @@ namespace Grid {
 
     for(int y{y_upper}; y <= y_lower; ++y){
       for(int x{x_lefter}; x <= x_righter; ++x){
-        /* 1)
-        if((x != cell_x && cell_y != y) || (x == cell_x && y != cell_y) || (x != cell_x && y == cell_y) ){
-          neighbours_alive = neighbours_alive + grid[y][x].current_status;
-        }
-        */
-
-        /* 2)
-        if(x == cell_x && y == cell_y){
-
-        }else{
-          neighbours_alive = neighbours_alive + grid[y][x].current_status;
-        }
-        */
-
         if(x != cell_x || y != cell_y){
           neighbours_alive = neighbours_alive + grid[y][x].current_status;
         }
@@ -198,15 +167,13 @@ namespace Grid {
     return neighbours_alive;
   }
 
-//cambio +
-
-void SetNextGen (std::vector<std::vector<cell::Cell>> &cell_grid){
-			for(size_t i{0}; i<cell_grid.size(); ++i){
+  void SetNextGen (std::vector<std::vector<cell::Cell>> &cell_grid){
+		for(size_t i{0}; i<cell_grid.size(); ++i){
 			for(size_t j{0}; j<cell_grid[i].size(); ++j){
 					cell_grid[i][j].current_status= cell_grid[i][j].next_status;
 					cell_grid[i][j].next_status=0;
-				}
 			}
 		}
+	}
 
 }
