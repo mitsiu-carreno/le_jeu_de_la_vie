@@ -147,6 +147,7 @@ namespace Grid {
 		grid[y][x].next_status = DefineNewStatus(grid[y][x].current_status, neighbours_alive);
       }
     }
+    SetNextGen(grid);
   }
 
 
