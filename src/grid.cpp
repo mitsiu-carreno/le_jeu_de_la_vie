@@ -110,6 +110,20 @@ namespace Grid {
 	}
 
 // print cell grid function
+  void PrintGrid(std::vector<std::vector<cell::Cell>> grid ){
+		int cells_alive_by_cicle{ 0 };
+		for(std::vector<cell::Cell> ext_vector : grid ){
+			for(cell::Cell cell : ext_vector){
+				cell::PrintStatus(cell.current_status);
+
+				//Funcion para contar cuantas celulas vivas existen por generacion
+				cells_alive_by_cicle = cells_alive_by_cicle + cell.current_status;
+			}
+			std::cout << "\n";
+		}
+		std::cout << "Cells alive: " << cells_alive_by_cicle << "\n";
+	}
+/*
 	void PrintGrid(std::vector<std::vector<cell::Cell>> grid ){
 		for(std::vector<cell::Cell> ext_vector : grid ){
 			for(cell::Cell cell : ext_vector){
@@ -118,7 +132,7 @@ namespace Grid {
 			std::cout << "\n";
 		}
 	}
-
+*/
 // function to define initial status
 	void DefineInitialStatus (int cell_gridsize, std::vector<std::vector<cell::Cell>> &cell_grid) {
 		int status_div {0};
