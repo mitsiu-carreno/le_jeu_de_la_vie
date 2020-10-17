@@ -14,17 +14,17 @@
 //OBTENER DIMENSIONES DE LA PANTALLA
 
 namespace Grid {
-	
+
 	std::vector<std::vector<cell::Cell>> Initialize_Grid (){
 		std::array<int,2> tamanio_grid=GetGridSize ( );
 		int side_grid = tamanio_grid[0];
 		//int size_grid = side_grid * side_grid;
 		std::vector<std::vector<cell::Cell>> cell_grid (side_grid);
 		int contador_id = 1;
-		
+
 		for(int i{0}; i < side_grid; ++i){
 			cell_grid[i].resize(side_grid);
-			
+
 			for(int j{0}; j < side_grid; ++j){
 				cell::Cell cell;
 				cell.current_status = true;
@@ -33,12 +33,12 @@ namespace Grid {
 				++contador_id;
 			}
 		}
-		
+
 		DefineInitialStatus(cell_grid.size(), cell_grid);
-		
+
 		return cell_grid;
 	}
-	
+
 	//Funcion que define el new status de las celulas
 	int DefineNewStatus(bool cell_status, int neighbours_alive) {
 		int new_cell_status;
@@ -73,11 +73,11 @@ namespace Grid {
 
 
 	std::array<int,2> GetGridSize ( ){
-		
+
 		std::array<int,2> col_row {utils::GetWindowLength()};//col, row
 		std::array<int,2> tamanio_grid_ajustado;
 		bool ancho=false;
-		
+
 		if (col_row [0]>col_row [1]) //col>row
 		{
 			ancho=true;
@@ -88,7 +88,7 @@ namespace Grid {
 		{
 			ancho=false;
 		}
-		
+
 		if (ancho==true)
 		{
 			tamanio_grid_ajustado[0]= col_row[1]*.9;
@@ -119,13 +119,13 @@ namespace Grid {
 		}
 	}
 
-// function to define initial status 
+// function to define initial status
 	void DefineInitialStatus (int cell_gridsize, std::vector<std::vector<cell::Cell>> &cell_grid) {
 		int status_div {0};
-		
+
 		std::cout << "Para definir el estatus inicial de las celulas, escoja un número del 1 al "<< cell_gridsize<<"\n";
 		std::cin>> status_div;
-		
+
 		for(size_t i{0}; i<cell_grid.size(); ++i){
 			for(size_t j{0}; j<cell_grid[i].size(); ++j){
 				if (cell_grid[i][j].id%status_div==0){
@@ -137,19 +137,18 @@ namespace Grid {
 		}
 	}
 
-  void CalcNextStatus(std::vector<std::vector<cell::Cell>> &grid){  
+  void CalcNextStatus(std::vector<std::vector<cell::Cell>> &grid){
     for(size_t y{0}; y<grid.size(); ++y){
       for(size_t x{0}; x<grid[0].size(); ++x){
 
         int neighbours_alive {GetNeighboursAlive(x, y, grid)};
-        std::cout << neighbours_alive << "\n"; // Remove after debugging
         // Process status based neighbour 
 
 		grid[y][x].next_status = DefineNewStatus(grid[y][x].current_status, neighbours_alive);
       }
     }
   }
-  
+
 
   int GetNeighboursAlive(int cell_x, int cell_y, std::vector<std::vector<cell::Cell>> &grid){
     int neighbours_alive {0};
@@ -164,15 +163,15 @@ namespace Grid {
       for(int x{x_lefter}; x <= x_righter; ++x){
         /* 1)
         if((x != cell_x && cell_y != y) || (x == cell_x && y != cell_y) || (x != cell_x && y == cell_y) ){
-          neighbours_alive = neighbours_alive + grid[y][x].current_status; 
+          neighbours_alive = neighbours_alive + grid[y][x].current_status;
         }
         */
 
         /* 2)
         if(x == cell_x && y == cell_y){
-        
+
         }else{
-          neighbours_alive = neighbours_alive + grid[y][x].current_status; 
+          neighbours_alive = neighbours_alive + grid[y][x].current_status;
         }
         */
 
@@ -183,18 +182,16 @@ namespace Grid {
     }
     return neighbours_alive;
   }
-  
+
 //cambio +
 
 void SetNextGen (std::vector<std::vector<cell::Cell>> &cell_grid){
 			for(size_t i{0}; i<cell_grid.size(); ++i){
 			for(size_t j{0}; j<cell_grid[i].size(); ++j){
 					cell_grid[i][j].current_status= cell_grid[i][j].next_status;
-					cell_grid[i][j].next_status=0; 
+					cell_grid[i][j].next_status=0;
 				}
 			}
 		}
 
 }
-
-

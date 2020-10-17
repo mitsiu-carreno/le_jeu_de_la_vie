@@ -5,24 +5,24 @@
 #include "sleepThread.hpp"
 #include <iostream>
 #include <vector>
+#include <string>
 
 int main(){
-  /////////------
-  std::vector<std::vector<cell::Cell>> cell_grid = Grid::Initialize_Grid (); 
-  //std::vector<cell::Cell> cell_grid (size_grid);
 
-  //Grid::PrintGridDebug(cell_grid); 
-  Grid::CalcNextStatus(cell_grid);
+	int start {1};
 
-  //std::cout << "window length: " << utils::GetWindowLength() << "\n";
+	std::vector<std::vector<cell::Cell>> cell_grid = Grid::Initialize_Grid ();
 
-  // utils::ClearScreen();
-  
-  Grid::PrintGrid(cell_grid);
 
-  //DefineInitialStatus(cell_grid.size(), cell_grid);
+	do{
 
- 
+		Grid::PrintGrid(cell_grid);
+
+		Grid::CalcNextStatus(cell_grid);
+
+    utils::ClearScreen();
+
+  } while (start==1) ;
+
 	return 0;
-  
 }
