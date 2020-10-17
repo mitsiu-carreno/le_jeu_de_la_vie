@@ -5,7 +5,6 @@
 #include "sleepThread.hpp"
 #include <iostream>
 #include <vector>
-#include <string>
 
 int main(){
 
@@ -19,6 +18,8 @@ int main(){
 		Grid::PrintGrid(cell_grid);
 
 		Grid::CalcNextStatus(cell_grid);
+
+		utils::Sleep(300);
 
     utils::ClearScreen();
 
